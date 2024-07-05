@@ -1,0 +1,64 @@
+{
+  "cities": [
+    {
+      "cityName": "Lisbon",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2027-10-31T15:59:59.138Z",
+      "notes": "My favorite city so far!",
+      "position": {
+        "lat": 38.727881642324164,
+        "lng": -9.140900099907554
+      },
+      "id": "73930385"
+    },
+    {
+      "cityName": "Madrid",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2027-07-15T08:22:53.976Z",
+      "notes": "",
+      "position": {
+        "lat": 40.46635901755316,
+        "lng": -3.7133789062500004
+      },
+      "id": "17806751"
+    },
+    {
+      "id": "8aad",
+      "cityName": "Gurgaon",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2024-07-04T09:18:00.636Z",
+      "notes": "yay",
+      "position": {
+        "lat": "28.449964340428426",
+        "lng": "77.0153221898749"
+      }
+    },
+    {
+      "id": "4933",
+      "cityName": "Gurgaon",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2024-07-04T09:18:38.653Z",
+      "notes": "",
+      "position": {
+        "lat": "28.448917422010325",
+        "lng": "77.0214863792906"
+      }
+    },
+    {
+      "id": "cf99",
+      "cityName": "Gurgaon",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2024-07-05T10:44:14.880Z",
+      "notes": "",
+      "position": {
+        "lat": "28.452090587546824",
+        "lng": "76.96987152099611"
+      }
+    }
+  ]
+}
