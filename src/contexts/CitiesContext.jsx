@@ -1,5 +1,11 @@
 /* eslint-disable react/prop-types */
-import { createContext, useContext, useEffect, useReducer } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useReducer,
+} from "react";
 
 const CitiesContext = createContext();
 
@@ -85,20 +91,23 @@ function CitiesProvider({ children }) {
     fetchCities();
   }, []);
 
-  async function getCityDetails(id) {
-    if (Number(id) === currentCity.id) return;
-    dispatch({ type: "loading" });
-    try {
-      const res = await fetch(`${base_URL}/cities/${id}`);
-      const data = await res.json();
-      dispatch({ type: "city/loaded", payload: data });
-    } catch {
-      dispatch({
-        type: "rejected",
-        payload: "something is wrong with loading the city",
-      });
-    }
-  }
+  const getCityDetails = useCallback(
+    async function getCityDetails(id) {
+      if (Number(id) === currentCity.id) return;
+      dispatch({ type: "loading" });
+      try {
+        const res = await fetch(`${base_URL}/cities/${id}`);
+        const data = await res.json();
+        dispatch({ type: "city/loaded", payload: data });
+      } catch {
+        dispatch({
+          type: "rejected",
+          payload: "something is wrong with loading the city",
+        });
+      }
+    },
+    [currentCity.id]
+  ); // always include primitives in the dependency array
 
   async function createCity(newCity) {
     dispatch({ type: "loading" });
@@ -160,4 +169,5 @@ function useCities() {
   return context;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export { CitiesProvider, useCities };

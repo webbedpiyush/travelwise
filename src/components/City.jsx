@@ -22,7 +22,7 @@ function City() {
     function () {
       getCityDetails(id);
     },
-    [id]
+    [id , getCityDetails]
   );
 
 
